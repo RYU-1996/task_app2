@@ -28,9 +28,14 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
-        <td><%= task.start.to_s(:datetime_jp) %></td>
-        <td><%= task.end.to_s(:datetime_jp) %></td>
-        <td><%= task.allDay %></td>
+        <td><%= task.start %></td>
+        <td><%= task.end %></td>
+        <td><%= task.all_day %>
+            <% if task.all_day == true %>
+            ○
+            <% else %>
+            <% end %>
+        </td>
         <td><%= task.update.to_s(:datetime_jp) %></td>
         <td><%= task.check %></td>
         <td><%= task.edit %></td>

@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   end
  
   def create
-    @task = Task.new(params.require(:task).permit(:title, :start, :end, :allDay, :memo))
+    @task = Task.new(params.require(:task).permit(:title, :start, :end, :all_day, :memo))
       if @task.save
         flash[:notice] = "スケジュールを登録しました"
         redirect_to :tasks
@@ -28,7 +28,7 @@ class TasksController < ApplicationController
  
   def update
     @task = Task.find(params[:id])
-    if @task.update(params.require(:task).permit(:title, :start, :end, :allDay, :memo))
+    if @task.update(params.require(:task).permit(:title, :start, :end, :all_day, :memo))
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :tasks
   　else
