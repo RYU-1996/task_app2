@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_084345) do
+ActiveRecord::Schema.define(version: 2021_08_25_221610) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2021_08_22_084345) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "all_day"
+    t.string "check"
+    t.string "edit"
+    t.string "Delete"
+    t.string "edit_tasks_path"
+    t.string "edit_task_path"
   end
 
 end

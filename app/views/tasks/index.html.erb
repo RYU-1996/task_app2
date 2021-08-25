@@ -36,7 +36,7 @@
             <% else %>
             <% end %>
         </td>
-        <td><%= task.update.to_s(:datetime_jp) %></td>
+        <td><%= task.updated_at.to_s(:datetime_jp) %></td>
         <td><%= task.check %></td>
         <td><%= task.edit %></td>
         <td><%= task.delete %></td>
