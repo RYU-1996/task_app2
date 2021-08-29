@@ -5,16 +5,15 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
-    render "/new"
   end
  
   def create
     @task = Task.new(params.require(:task).permit(:title, :start, :end, :all_day, :memo))
       if @task.save
         flash[:notice] = "スケジュールを登録しました"
-        redirect_to :tasks
+        redirect_to :tasks, status: :found
       else
-        render "new"
+        render :new
       end
   end
  
@@ -32,7 +31,7 @@ class TasksController < ApplicationController
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :tasks
   　else
-      render "edit"
+      render :edit
     end
   end
  

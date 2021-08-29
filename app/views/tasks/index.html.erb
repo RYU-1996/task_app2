@@ -28,8 +28,8 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
-        <td><%= task.start %></td>
-        <td><%= task.end %></td>
+        <td><%= task.start.strftime('%Y年 %m月 %d日') %></td>
+        <td><%= task.end.strftime('%Y年 %m月 %d日') %></td>
         <td><%= task.all_day %>
             <% if task.all_day == true %>
             ○
@@ -44,7 +44,7 @@
           <%= link_to "確認", task %>
         </td>
         <td>
-          <%= link_to "編集", [:edit, task] %>
+          <%= link_to "編集", edit_task_path(:id) %>
         </td>
         <td>
           <%= link_to "削除", task, method: :delete, data: { confirm: "本当に削除しますか？" } %>

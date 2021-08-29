@@ -1,4 +1,4 @@
-<h2>スケジュール編集</h2>
+<h2>スケジュール新規作成</h2>
 
 <%= form_for @task do |f| %>
    <table>
@@ -16,6 +16,7 @@
      </tr>
      <tr>
        <th><%= f.label :all_day ,"終日" %></th>
+       <td><%= f.check_box :all_day, {}, true, false %>終日の場合はチェックを入れます</td>
      </tr>
      <tr>
        <th><%= f.label :memo ,"スケジュールメモ" %></th>
@@ -25,8 +26,8 @@
    
    <div>
      <ul>
-       <li><%= f.submit "スケジュールの編集を完了する" %></li>
-       <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
+       <li><%= f.submit "スケジュールを新規登録する" %></li>
+       <li><%= link_to "スケジュール一覧に戻る",:tasks %></li>
      </ul>
    </div>
 <% end %>
