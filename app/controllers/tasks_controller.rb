@@ -27,12 +27,12 @@ class TasksController < ApplicationController
  
   def update
     @task = Task.find(params[:id])
-    if @task.update(params.require(:task).permit(:title, :start, :end, :all_day, :memo))
-      flash[:notice] = "スケジュールを更新しました"
-      redirect_to :tasks
-  　else
-      render :edit
-    end
+      if @task.update(params.require(:task).permit(:title, :start, :end, :all_day, :memo))
+        flash[:notice] = "スケジュールを更新しました"
+        redirect_to :tasks
+      else
+        render :edit
+      end
   end
  
   def destroy

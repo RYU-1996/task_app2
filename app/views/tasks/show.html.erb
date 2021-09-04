@@ -7,11 +7,11 @@
   </tr>
   <tr>
     <th>開始日</th>
-    <td><%= @task.start %></td>
+    <td><%= @task.start.strftime('%Y年 %m月 %d日') %></td>
   </tr>
   <tr>
-    <th>終了日</th>
-    <td><%= @task.end %></td>
+    <th>投稿日時</th>
+    <td><%= @task.created_at.to_s(:datetime_jp) %></td>
   </tr>
   <tr>
     <th>終日</th>
@@ -26,8 +26,8 @@
 <div>
   <ul>
     <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
-    <li><%= link_to "スケジュールを編集する", :tasks %></li>
-    <li><%= link_to "スケジュールを削除", :tasks %></li>
+    <li><%= link_to "スケジュールを編集する", edit_task_path %></li>
+    <li><%= link_to "スケジュールを削除", :task, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
   </ul>
 </div>
 
